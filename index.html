@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vendr</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Vend</h1>
+    <p>Current Balance $<span id="current-balance">0</span></p>
+
+    <button onclick="app.controllers.vendController.addQuarter()">Add Quarter</button>
+    <button onclick="app.controllers.vendController.buyMtDew()">Buy Mt. Dew</button>
+
+
+    <div>
+        <img src="https://images-na.ssl-images-amazon.com/images/I/91Ip10yHNVL._SY679_.jpg" height="200" id="mt-dew-pic" class="hidden">
+    </div>
+
+    <!-- LOAD EXTERNAL LIBRARIES -->
+
+    <!-- SERVICES -->
+    <script src="app/vend/vend-service.js"></script>
+
+    <!-- CONTROLLERS -->
+    <script src="app/vend/vend-controller.js"></script>
+
+    <!-- START THE APP -->
+    <script src="app/init.js"></script>
+
+</body>
+</html>

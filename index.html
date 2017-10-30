@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,22 @@
     <title>Vendr</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Vend</h1>
-    <p>Current Balance $<span id="current-balance">0</span></p>
-
-    <button onclick="app.controllers.vendController.addQuarter()">Add Quarter</button>
-    <button onclick="app.controllers.vendController.buyMtDew()">Buy Mt. Dew</button>
+    <p>Current Balance $
+        <span id="current-balance">0</span>
+    </p>
+    <p>Change: $
+        <span class="change-span">0</span>
+    </p>
+    <div class="money-div">
+        <button onclick="app.controllers.vendController.addQuarter()">Add Quarter</button>
+    </div>
+    <div class="choice-div">
+        <button onclick="app.controllers.vendController.buyPop('dew')">Buy Mt. Dew</button>
+        <button onclick="app.controllers.vendController.buyPop('pepsi')">Buy Pepsi</button>
+    </div>
 
 
     <div>
@@ -31,4 +42,5 @@
     <script src="app/init.js"></script>
 
 </body>
+
 </html>

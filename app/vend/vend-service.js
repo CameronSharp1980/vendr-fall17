@@ -1,7 +1,6 @@
 function VendService() {
 
     // PRIVATE PARTS
-    var machineTotal = 5
     var machineTotals = {
         fives: {units: 5, quarterValue: 5},
         ones: {units: 5, quarterValue: 1},
@@ -27,33 +26,24 @@ function VendService() {
     this.addQuarter = function addQuarter() {
         balance += machineTotals.quarters.quarterValue
         // balance += quarterValue
-        machineTotal += machineTotals.quarters.quarterValue
         machineTotals.quarters.units++
 
-        console.log("Balance: " + balance)
-        console.log("Machine Total: " + machineTotal)
         console.log("Total quarters: " + machineTotals.quarters.units)
     }
 
     this.addOnes = function addOnes() {
         balance += machineTotals.ones.quarterValue
         // balance += quarterValue
-        machineTotal += machineTotals.ones.quarterValue
         machineTotals.ones.units++
 
-        console.log("Balance: " + balance)
-        console.log("Machine Total: " + machineTotal)
         console.log("Total Ones: " + machineTotals.ones.units)
     }
 
     this.addFives = function addFives() {
         balance += machineTotals.fives.quarterValue
         // balance += quarterValue
-        machineTotal += machineTotals.fives.quarterValue
         machineTotals.fives.units++
 
-        console.log("Balance: " + balance)
-        console.log("Machine Total: " + machineTotal)
         console.log("Total Fives: " + machineTotals.fives.units)
     }
 
@@ -61,7 +51,7 @@ function VendService() {
         change = balance;
         balance = 0;
         machineTotals.quarters.units =  machineTotals.quarters.units - (change / machineTotals.quarters.quarterValue)
-        console.log("units: " + machineTotals.quarters.units);
+        console.log("Total quarters: " + machineTotals.quarters.units);
         console.log("Change: " + change);
         console.log("Balance: " + balance);
         return change;

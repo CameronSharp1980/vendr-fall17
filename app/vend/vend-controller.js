@@ -15,7 +15,7 @@ function VendController() {
     this.buyPop = function buyPop(type) {
         // console.log('buyPop Start')
         console.log(type)
-        if (vendService.buyPop(type) && vendService.getQuantity(type) >= 1) { //current test line
+        if (vendService.buyPop(type) && vendService.getQuantity(type) >= 1) {
             console.log("Enjoy your drink")
             vendService.decrementQuantity(type)
             changeElem.innerText = vendService.makeChange()
@@ -40,6 +40,20 @@ function VendController() {
         document.getElementById("dew-can").classList.add("hidden")
         document.getElementById("pepsi-can").classList.add("hidden")
         vendService.addQuarter()
+        update()
+    }
+
+    this.addOnes = function addOnes() {
+        document.getElementById("dew-can").classList.add("hidden")
+        document.getElementById("pepsi-can").classList.add("hidden")
+        vendService.addOnes()
+        update()
+    }
+
+    this.addFives = function addFives() {
+        document.getElementById("dew-can").classList.add("hidden")
+        document.getElementById("pepsi-can").classList.add("hidden")
+        vendService.addFives()
         update()
     }
 }

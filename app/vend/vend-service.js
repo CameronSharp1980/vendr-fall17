@@ -4,8 +4,8 @@ function VendService() {
     var machineTotal = 5
     var balance = 0
     var pops = {
-        dew: {name: "Mountain Dew", price: 1},
-        pepsi: {name: "Pepsi", price: 1.25}
+        dew: { name: "Mountain Dew", price: 1, quantity: 5 },
+        pepsi: { name: "Pepsi", price: 1.25, quantity: 5 }
     }
     // var mtDewCost = 1
     var quarterValue = .25
@@ -14,6 +14,7 @@ function VendService() {
 
     // PUBLIC PARTS
     // GETTERS AND SETTERS
+
     this.getBalance = function getBalance() {
         return balance
     }
@@ -28,8 +29,8 @@ function VendService() {
     this.makeChange = function makeChange() {
         change = balance;
         balance = 0;
-        console.log("Change" + change);
-        console.log("Balance" + balance);
+        console.log("Change: " + change);
+        console.log("Balance: " + balance);
         return change;
     }
 
@@ -40,6 +41,23 @@ function VendService() {
         } else {
             return false;
         }
+    }
+
+    this.getQuantity = function getQuantity(type) {
+        // pops[type].quantity--;
+        // if (pops[type].quantity < 0) {
+        //     pops[type].quantity = 0
+        // }
+        console.log("Quantity before subtraction: " + pops[type].quantity);
+        return pops[type].quantity;
+    }
+
+    this.decrementQuantity = function decrementQuantity(type) {
+        pops[type].quantity--;
+        if (pops[type].quantity < 0) {
+            pops[type].quantity = 0;
+        }
+        console.log("Quantity after subtraction: " + pops[type].quantity);
     }
 
 
